@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#25272D] overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceGramAI | $FGA</title>
+    <meta
+      name="description"
+      content="Introducing FaceGramAI,  Capture, Play, Earn – All Through Your Selfie!"
+    />
+    <meta
+      property="og:image"
+      content="https://dogatoshi.dog/assets/images/og-image.png"
+    />
+    <meta property="og:site_name" content="$FGA" />
+
+    <!-- External assets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js" defer></script>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Titan One and Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Spline -->
+  </head>
+
+  <body class="text-white font-titan-one overflow-x-hidden">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed top-0 left-0 w-full h-full bg-[#25272D] grid place-items-center z-50 transition-all"
+    >
+      <div class="absolute top-0 right-0">
+        <img src="./assets/images/right-paw.svg" alt="" class="w-24 sm:w-32" />
+      </div>
+      <div class="absolute bottom-8 left-0">
+        <img src="./assets/images/left-paw.svg" alt="" class="w-24 sm:w-32" />
+      </div>
+
+      <div class="grid gap-8 place-items-center">
+        <img
+          src="./assets/images/dogatoshi-icon.png"
+          alt=""
+          class="w-32 lg:w-44 animate-bounce"
+        />
+        <div class="text-center grid gap-4">
+          <p class="text-2xl sm:text-3xl animate-pulse text-yellow-500">
+            Loading...
+          </p>
+          <p class="sm:text-2xl text-neutral-400">
+            📸 Capture the fun! Play, Earn, enjoy! 🚀
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="bg-[#1F2123] fixed top-0 w-full z-40 font-inter text-sm border-b border-white/10 lg:border-0 lg:shadow-lg"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between gap-8 px-4 py-6 sm:px-8 lg:py-4"
+      >
+        <a href="#" title="Dogatoshi">
+          <img
+            src="./assets/images/nav-image.svg"
+            alt="dogatoshi logo"
+            class="w-52 lg:w-36 hidden sm:block"
+          />
+          <img
+            src="./assets/images/dogatoshi-icon.png"
+            alt="dogatoshi logo"
+            class="w-24 sm:hidden"
+          />
+        </a>
+
+        <ul class="gap-8 font-bold hidden lg:flex">
+          <li>
+            <a
+              href="#hero"
+              title="Home"
+              class="hover:text-yellow-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#know"
+              title="Know US"
+              class="hover:text-yellow-500 transition-colors"
+              >Know US</a
+            >
+          </li>
+          <li>
+            <a
+              href="#why-us"
+              title="Why US"
+              class="hover:text-yellow-500 transition-colors"
+              >Why US</a
+            >
+          </li>
+          <li>
+            <a
+              href="#roadmap"
+              title="RoadMap"
+              class="hover:text-yellow-500 transition-colors"
+              >RoadMap</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tokenomics"
+              title="Tokenomics"
+              class="hover:text-yellow-500 transition-colors"
+              >Tokenomics</a
+            >
+          </li>
+          <li>
+            <a
+              href="#partners"
+              title="Partnerships"
+              class="hover:text-yellow-500 transition-colors"
+              >Partnerships</a
+            >
+          </li>
+          <li>
+            <a
+              href="#team"
+              title="Team"
+              class="hover:text-yellow-500 transition-colors"
+              >Team</a
+            >
+          </li>
+          <li>
+            <a
+              href="#faq"
+              title="Faq"
+              class="hover:text-yellow-500 transition-colors"
+              >FAQs</a
+            >
+          </li>
+          <li>
+            <a
+              href="#team"
+              title="WhitePaper"
+              class="hover:text-yellow-500 transition-colors"
+              >WhitePaper</a
+            >
+          </li>
+        </ul>
+
+
+        <div>
+          <button type="button" id="menu-button">
+            <img
+              src="./assets/images/menu-icon.svg"
+              alt="menu icon"
+              class="w-24 lg:hidden"
+            />
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navbar -->
+    <div
+      id="mobile-navbar"
+      class="fixed grid place-items-center top-0 left-0 w-full h-full bg-[#1F2123]/95 backdrop-blur z-50 transform -translate-y-full overflow-y-auto transition-transform duration-300 ease-in-out"
+    >
+      <button
+        id="close-button"
+        type="button"
+        class="absolute top-8 right-8 text-4xl"
+      >
+        X
+      </button>
+      <ul
+        class="flex flex-col gap-12 p-8 text-center text-3xl font-inter font-semibold"
+      >
+        <li>
+          <a
+            href="#hero"
+            title="Home"
+            class="hover:text-yellow-500 transition-colors"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#know"
+            title="Know US"
+            class="hover:text-yellow-500 transition-colors"
+            >Know US</a
+          >
+        </li>
+        <li>
+          <a
+            href="#why-us"
+            title="Why US"
+            class="hover:text-yellow-500 transition-colors"
+            >Why US</a
+          >
+        </li>
+        <li>
+          <a
+            href="#roadmap"
+            title="RoadMap"
+            class="hover:text-yellow-500 transition-colors"
+            >RoadMap</a
+          >
+        </li>
+        <li>
+          <a
+            href="#tokenomics"
+            title="Tokenomics"
+            class="hover:text-yellow-500 transition-colors"
+            >Tokenomics</a
+          >
+        </li>
+        <li>
+          <a
+            href="#partners"
+            title="Partnerships"
+            class="hover:text-yellow-500 transition-colors"
+            >Partnerships</a
+          >
+        </li>
+        <li>
+          <a
+            href="#team"
+            title="Team"
+            class="hover:text-yellow-500 transition-colors"
+            >Team</a
+          >
+        </li>
+        <li>
+          <a
+            href="#faq"
+            title="Faq"
+            class="hover:text-yellow-500 transition-colors"
+            >FAQs</a
+          >
+        </li>
+        <li>
+          <a
+            href="#team"
+            title="WhitePaper"
+            class="hover:text-yellow-500 transition-colors"
+            >WhitePaper</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="bg-hero-pattern bg-cover min-h-screen grid place-items-center relative pt-32 md:pt-0"
+    >
+      <div
+        class="absolute bottom-0 w-full h-10 bg-gradient-to-t from-[#25272D] to-transparent"
+      ></div>
+
+      <div
+        class="container mx-auto flex flex-col-reverse items-center justify-evenly md:flex-row gap-8 px-8"
+      >
+        <div
+          class="max-w-72 z-10 flex-1"
+          data-aos="zoom-out"
+          data-aos-delay="1500"
+        >
+          <h1 class="text-8xl lg:text-9xl uppercase">
+            <span>Face</span><span class="text-yellow-500">GramAI</span>
+          </h1>
+
+          <p class="mt-4 font-inter text-lg pl-2 sm:pl-4">
+            Your fun, easy app for turning selfies into rewards and trading unique digital assets. Scan, play, and earn with FaceGram, where your face or pet becomes your ticket to exciting challenges and decentralized ownership!
+          </p>
+
+          <div class="flex gap-4 items-center p-4 justify-center">
+            <a
+              href="https://t.me/FaceGramAI"
+              title="Telegram"
+              class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/images/telegram-icon.svg"
+                alt="Telegram"
+                class="w-8"
+              />
+            </a>
+            <a
+              href="https://x.com/facegram_ai"
+              title="Twitter"
+              class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/images/twitter-icon.svg"
+                alt="Twitter"
+                class="w-8"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="flex-1 pt-20 pb-10 xl:hidden"
+          data-aos="zoom-out"
+          data-aos-delay="1500"
+        >
+          <img
+            src="./assets/images/hero-image.png"
+            alt="dog image"
+            class="lg:max-w-lg sm:max-w-md max-w-full w-full ml-auto"
+            data-aos="fade-down"
+          />
+        </div>
+
+        <div class="hidden xl:block" data-aos="zoom-out" data-aos-delay="1500">
+          <div class="scale-[1.85] translate-x-1/4">
+            <spline-viewer
+              loading-anim-type="spinner-big-light"
+              url="https://prod.spline.design/zTQrZsO226WCeJY4/scene.splinecode"
+            ></spline-viewer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Steps to Know the Project -->
+    <section id="know" class="bg-features-bg-pattern bg-cover">
+      <div class="container mx-auto px-4 sm:px-8 py-20 lg:py-32 grid gap-10">
+        <div class="text-center grid gap-2" data-aos="zoom-out">
+          <h2 class="text-yellow-500 text-4xl sm:text-5xl uppercase">
+            3 steps to know the project
+          </h2>
+          <p class="text-xl sm:text-2xl">
+            Introducing FaceGramAI, where fun meet earn in the world of meme
+            tokens! 🌕
+          </p>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center gap-8 flex-col sm:flex-row"
+          data-aos="zoom-out"
+        >
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/camera.png"
+                alt="camera"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                1. Scan Your Face or Pet
+              </h3>
+              <p class="font-inter sm:text-lg">
+                Use FaceGram AI to scan your face or pet and generate a unique 3D avatar.
+              </p>
+            </div>
+          </div>
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/2.png"
+                alt="Earn"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                2. Earn Points and Rewards
+              </h3>
+              <p class="font-inter sm:text-lg">
+                Complete daily tasks, challenges, and referrals to earn points and rewards.
+              </p>
+            </div>
+          </div>
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/trade.png"
+                alt="trade"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                3. Trade Digital Assets
+              </h3>
+              <p class="font-inter text-lg">
+                Trade your avatars and rewards as digital assets on the blockchain.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+  <!-- Why Pick FaceGramAI? -->
+  <section id="why-us" class="bg-features-bg-pattern bg-cover">
+    <div class="container mx-auto px-4 sm:px-8 py-20 grid gap-16">
+      <div class="text-center grid gap-4" data-aos="zoom-out">
+        <h2 class="text-yellow-500 text-4xl sm:text-5xl uppercase">
+          Why Pick FaceGramAI?
+        </h2>
+      </div>
+
+      <div class="grid gap-4">
+        <div
+          class="flex flex-wrap justify-center gap-4 flex-col sm:flex-row"
+          data-aos="zoom-out"
+        >
+          <div class="flex-1 w-full">
+            <div class="flex flex-col gap-2 p-4">
+              <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                1. Innovation that sticks like a selfie filter
+              </h3>
+              <p class="font-inter text-lg sm:text-xl">
+                FaceGram AI transforms your face or pet into unique digital assets, offering a fun and fresh twist in the world of crypto.
+            </div>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="flex flex-col gap-2 p-4">
+              <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                2. Excitement that energizes more than a trending meme
+              </h3>
+              <p class="font-inter text-lg sm:text-xl">
+                Our platform keeps you engaged with challenges and rewards that have you leveling up faster than you can snap a selfie..
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap justify-center gap-4 flex-col sm:flex-row"
+          data-aos="zoom-out"
+        >
+          <div class="flex-1 w-full">
+            <div class="flex flex-col gap-2 p-4">
+              <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                3. Community spirit that sparks viral vibes
+              </h3>
+              <p class="font-inter text-lg sm:text-xl">
+                Just like a group selfie, FaceGram AI thrives on collaboration, making your journey more fun and rewarding when you connect with others.
+              </p>
+            </div>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="flex flex-col gap-2 p-4">
+              <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                4. Security that shields your assets like a high-tech camera lens
+              </h3>
+              <p class="font-inter text-lg sm:text-xl">
+                We ensure your digital creations and assets are protected, no photo bombers or security breaches here!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- RoadMaps -->
+    <section id="roadmap" class="bg-features-bg-pattern bg-cover py-20">
+      <div class="container mx-auto px-4 sm:px-8">
+        <h2
+          class="text-center text-yellow-500 text-4xl sm:text-5xl uppercase mb-12"
+          data-aos="zoom-out"
+        >
+          Roadmap
+        </h2>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- 2024 Q4 -->
+          <div class="p-6 border border-yellow-500 rounded-lg" data-aos="fade-up">
+            <h3 class="text-2xl text-yellow-500 mb-4">2024 Q4</h3>
+            <p class="text-lg text-white">
+              Launch of the Telegram Mini App and beta testing. Start community building and AI face scanning features.
+            </p>
+          </div>
+    
+          <!-- 2025 Q1 -->
+          <div class="p-6 border border-yellow-500 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl text-yellow-500 mb-4">2025 Q1</h3>
+            <p class="text-lg text-white">
+              Official platform launch with full token integration. Start referral programs and ranking systems.
+            </p>
+          </div>
+    
+          <!-- 2025 Q2 -->
+          <div class="p-6 border border-yellow-500 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl text-yellow-500 mb-4">2025 Q2</h3>
+            <p class="text-lg text-white">
+              Introduce NFT marketplace, allowing users to mint and trade their 3D avatars and digital assets.
+            </p>
+          </div>
+    
+          <!-- 2025 Q3 -->
+          <div class="p-6 border border-yellow-500 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl text-yellow-500 mb-4">2025 Q3</h3>
+            <p class="text-lg text-white">
+              Expansion of tasks, AI-powered features, and cross-platform integration (other social apps).
+            </p>
+          </div>
+    
+          <!-- 2025 Q4 -->
+          <div class="p-6 border border-yellow-500 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="text-2xl text-yellow-500 mb-4">2025 Q4</h3>
+            <p class="text-lg text-white">
+              Collaborations with metaverse projects and expansion into virtual environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tokenomics -->
+    <section
+    id="tokenomics"
+    class="bg-gradient-pattern-portrait md:bg-gradient-pattern bg-cover uppercase py-20 relative"
+  >
+    <div
+      class="absolute bottom-0 w-full h-10 bg-gradient-to-t from-[#25272D] to-transparent"
+    ></div>
+
+  
+    <div
+      class="container mx-auto flex flex-col items-center justify-center gap-8 xl:gap-16"
+      data-aos="zoom-out"
+    >
+      <!-- Heading Section -->
+      <h3 class="text-5xl text-yellow-500 text-center">FACEGRAMAI Tokenomics</h3>
+  
+      <!-- Token Supply -->
+      <div class="w-full text-center">
+        <h4 class="text-3xl text-yellow-500 mb-4">Total Token Supply</h4>
+        <p class="text-2xl text-white">1,000,000,000 $FGT Tokens</p>
+      </div>
+  
+      <!-- Pie Chart Section -->
+      <div class="w-full max-w-xl mx-auto">
+        <canvas id="tokenChart"></canvas>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Chart.js Script for Pie Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('tokenChart').getContext('2d');
+    const tokenChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Community Rewards (60%)', 'Team & Advisors (15%)', 'Development & Operations (10%)', 'Marketing & Partnerships (10%)', 'Liquidity & Exchange Listings (5%)'],
+        datasets: [{
+          label: 'Token Allocation',
+          data: [60, 15, 10, 10, 5],
+          backgroundColor: [
+            '#ffcd56',
+            '#ff6384',
+            '#36a2eb',
+            '#ff9f40',
+            '#4bc0c0'
+          ],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: 'white',
+              font: {
+                size: 16
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+  
+    <!-- Partnerships -->
+    <section id="partners" class="bg-features-bg-pattern bg-cover py-20">
+      <div class="container mx-auto px-4 sm:px-8">
+        <h2
+          class="text-center text-yellow-500 text-4xl sm:text-5xl uppercase mb-12"
+          data-aos="zoom-out"
+        >
+          Our Partners
+        </h2>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center items-center">
+          <!-- Partner Logo 1 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner1-logo.png"
+              alt="Partner 1"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 2 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner2-logo.png"
+              alt="Partner 2"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 3 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner3-logo.png"
+              alt="Partner 3"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 4 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner4-logo.png"
+              alt="Partner 4"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 5 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner5-logo.png"
+              alt="Partner 5"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 6 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner6-logo.png"
+              alt="Partner 6"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 7 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner7-logo.png"
+              alt="Partner 7"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+          <!-- Partner Logo 8 -->
+          <div class="flex justify-center">
+            <img
+              src="./assets/images/partner8-logo.png"
+              alt="Partner 8"
+              class="object-contain w-32 h-32"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Swiper JS Initialization Script -->
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        },
+      });
+    </script>
+    
+<!-- Team Section -->
+<!-- Team Section -->
+<section id="team" class="bg-features-bg-pattern bg-cover py-20">
+  <div class="container mx-auto px-4 sm:px-8">
+    <!-- Team Section Title -->
+    <h2
+      class="text-center text-yellow-500 text-4xl sm:text-5xl uppercase mb-12"
+      data-aos="zoom-out"
+    >
+      Our Team
+    </h2>
+
+    <!-- Team Members -->
+    <div class="flex flex-col md:flex-row gap-16 justify-between text-sm">
+      <div class="grid gap-8 flex-1 max-w-sm mx-auto sm:mx-0" data-aos="zoom-out">
+        <!-- Team Member 1 -->
+        <div class="text-center">
+          <a href="https://www.linkedin.com/in/belal-abdullah-anas/" target="_blank">
+            <img
+              src="./assets/images/team-member-1.jpg"
+              alt="Team Member 1"
+              class="rounded-full mx-auto w-48"
+            />
+            <h3 class="mt-4 font-bold text-xl">Belal Abdulah Anas</h3>
+          </a>
+          <p class="text-gray-600">CEO & Founder</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="text-center">
+          <a href="https://www.linkedin.com/in/oxzahidp/" target="_blank">
+            <img
+              src="./assets/images/team-member-2.jpg"
+              alt="Team Member 2"
+              class="rounded-full mx-auto w-48"
+            />
+            <h3 class="mt-4 font-bold text-xl">Zahid Hasan</h3>
+          </a>
+          <p class="text-gray-600">Co-Founder & CMO</p>
+        </div>
+      </div>
+
+      <div class="grid gap-8 flex-1 max-w-sm mx-auto sm:mx-0" data-aos="zoom-out">
+        <!-- Team Member 3 -->
+        <div class="text-center">
+          <a href="https://www.linkedin.com/in/sanaullah-sani/" target="_blank">
+            <img
+              src="./assets/images/team-member-3.jpg"
+              alt="Team Member 3"
+              class="rounded-full mx-auto w-48"
+            />
+            <h3 class="mt-4 font-bold text-xl">Sanaullah Sani</h3>
+          </a>
+          <p class="text-gray-600">CTO</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="text-center">
+          <a href="https://www.linkedin.com/in/takey-yeasir-sajin/" target="_blank">
+            <img
+              src="./assets/images/team-member-4.jpg"
+              alt="Team Member 4"
+              class="rounded-full mx-auto w-48"
+            />
+            <h3 class="mt-4 font-bold text-xl">Takey Yeasir Sajin</h3>
+          </a>
+          <p class="text-gray-600">Game Artist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- FAQ -->
+      <section id="faq" class="bg-gray-900 py-20">
+        <div class="container mx-auto px-4 sm:px-8">
+          <h2
+            class="text-center text-yellow-500 text-4xl sm:text-5xl uppercase mb-12"
+            data-aos="zoom-out"
+          >
+            FAQs
+          </h2>
+      
+          <div class="space-y-8">
+            <!-- FAQ 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">What is FaceGramAI?</h3>
+              <p class="text-white text-lg">
+                FaceGramAI is a meme-driven project on the Ton Chain that integrates AI technology to calculate a user's Telegram age and create 3D avatars from live photos. Users can earn rewards by completing tasks, referrals, and engaging with the platform.
+              </p>
+            </div>
+      
+            <!-- FAQ 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">How do I participate in FaceGramAI?</h3>
+              <p class="text-white text-lg">
+                You can participate by interacting with our Telegram Mini App bot, uploading a live photo of yourself or your pet, and completing various tasks like joining groups, following on Twitter, and referring friends. Each action will earn you points that can be redeemed for rewards.
+              </p>
+            </div>
+      
+            <!-- FAQ 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">What rewards can I earn?</h3>
+              <p class="text-white text-lg">
+                You can earn $TON and other rewards by completing tasks, referring new users, and engaging with the platform. Special NFTs and points are awarded for higher levels of participation and contribution to the community.
+              </p>
+            </div>
+      
+            <!-- FAQ 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">What is the 3D avatar feature?</h3>
+              <p class="text-white text-lg">
+                FaceGramAI allows users to upload a live photo, which is scanned and converted into a 3D avatar. These avatars can be traded as NFTs in the marketplace or used in various gamified interactions within the platform.
+              </p>
+            </div>
+      
+            <!-- FAQ 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">How does the referral system work?</h3>
+              <p class="text-white text-lg">
+                The referral system is not linear. Users earn more points by referring people with higher fan value. The more valuable the referral, the more points you earn, creating a dynamic engagement strategy for our community.
+              </p>
+            </div>
+      
+            <!-- FAQ 6 -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl text-yellow-500 mb-4">How do I get involved in the community?</h3>
+              <p class="text-white text-lg">
+                You can join our community through Telegram and other social media platforms. We have groups dedicated to discussions, updates, and events where you can interact with fellow users and stay informed about the latest developments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <!-- Footer -->
+    <footer class="bg-footer-bg-pattern bg-center bg-cover relative">
+      <div class="absolute top-4 right-4">
+        <img src="./assets/images/stripes.svg" alt="" />
+      </div>
+
+      <div class="grid gap-8 py-16 px-4 text-center" data-aos="fade-in">
+        <h2 class="text-5xl sm:text-6xl">JOIN OUR COMMUNITY</h2>
+        <div class="flex gap-4 justify-center items-center">
+          <a
+            href="https://t.me/FaceGramAI"
+            title="Telegram"
+            class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/telegram-icon.svg"
+              alt="Telegram"
+              class="w-8"
+            />
+          </a>
+          <a
+            href="https://x.com/facegram_ai"
+            title="Twitter"
+            class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/twitter-icon.svg"
+              alt="Twitter"
+              class="w-8"
+            />
+          </a>
+        </div>
+        <div class="font-inter text-xs grid gap-1">
+          <p>2024 by FaceGramAI All rights reserved.</p>
+          <p class="max-w-sm mx-auto text-white/70 px-2">
+            This meme coin is made purely for entertainment and utility and does
+            not guarantee any financial returns. Invest at your own risk.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Swiper JS -->
+  </body>
+</html>
